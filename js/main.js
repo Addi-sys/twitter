@@ -7,7 +7,7 @@ let tweetContents = document.getElementById("tweetArea")
 const tweetButton = () => {
    
     let tweet = document.getElementById("tweetArea").value
-    let itemTweet = {contents:tweet}
+    let itemTweet = {contents:tweet, createTime:Date.now()}
     tweetCards.push(itemTweet)
     tweetCards.reverse()    
     document.getElementById('tweetArea').value = ``
@@ -23,7 +23,7 @@ const render = (array) => {
         let html = "";
         html += `<div><div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">${item.contents}</h5>
+          <h5 class="card-title">${item.contents}</h5><span>${moment(item.createTime).fromNow()}
           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
           <p class="card-text">sample text</p>
           <a onclick="remove(${index})" href="#" class="card-link">Delete</a>
