@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twitter</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -24,25 +23,49 @@
                     <ul><a i class="fa fa-list-alt fa-lg mr-4" href="#">List</a></ul>
                     <ul><a i class="fa fa-bullseye fa-lg mr-4" href="#">Profile</a></ul>
                     <ul><a i class="fa fa-ellipsis fa-lg mr-4" href="#">More...</a></ul>
-                    <button class="btn btn-warning" >Followers</button>
+                    <button class="btn btn-warning">Followers</button>
 
                 </li>
             </div>
             <div class="twitter-section col-5">.col-6
 
             </div>
-            <div class="card-trend col-3">
-                <li>
-                    <ul>1</ul>
-                    <ul>2</ul>
-                    <ul>3</ul>
-                    <ul>4</ul>
 
-                </li>
+            <div class="trendSection col-3">
+                <div class="trendHeader">
+                    <h5>Vietnam trends</h5>
+                    <i class="i fa fa-cog cogImage"></i>
+                </div>
+                <div class="card-trend">
+                    <ol class="border-trend">
+                        <li class="trendCard">
+                            <p>1. Trending</p>
+                            <h6>#WorldNews</h6>
+                            <p id="tweetCount1">1k Tweets</p>
+                        </li>
+                        <li class="trendCard">
+                            <p>2. Trending</p>
+                            <h6>#BLACKPINK</h6>
+                            <p id="tweetCount2">1k Tweets</p>
+                        </li>
+                        <li class="trendCard">
+                            <p>3. Trending</p>
+                            <h6>#BlackOutTuesday</h6>
+                            <p id="tweetCount3">1k Tweets</p>
+                        </li>
+                        <li class="trendCard">
+                            <p>4, Trending</p>
+                            <h6>Some Cambodian Dribble?</h6>
+                            <p id="tweetCount4">1K Tweets</p>
+                        </li>
+                        <li class="trendCard">
+                            <a href="#">Change location</a>
+                        </li>
+                    </ol>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="js/main.js"></script>
+        <script src="js/main.js"></script>
 </body>
 
 </html>
