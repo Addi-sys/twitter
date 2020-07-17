@@ -39,6 +39,10 @@ li {
     padding-bottom: 40px;
     min-height: 700px;
 }
+.tweetinput{
+    width: 400px;
+}
+
 .tweetcard{
     display: flex;
     justify-content: center;
