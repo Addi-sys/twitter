@@ -3,36 +3,83 @@ body {
     text-align: center;
     margin-right: 0;
     padding-right: 0;
-    background-color: #000000f5;
+    background-color: rgb(21, 32, 43);
     height: 100%;
     background-repeat: repeat;
     background-size: cover;
     color: thistle;
 }
-
+/* NavBar Section */
 .main-section-layout {
-    text-align: center;
-    width: 100%;
-    margin-top: 5%;
+   display: flex;
+   align-items: flex-start;
+}
+.twitter-section {
+    border: .3px solid white;
+    height: 100%;
+}
+
+
+.followers-layout{
+    font-size: 20px;
+    font-weight: 400;
+    width: 80%;
+    padding: 5px;
+    margin-left:  15%;
+    border-radius: 20px;
+
+}
+.twitter-layout-logo{
+    margin-bottom: 20px;
+}
+
+.profile-section{
+    margin-top: 7rem;
+    margin-left: 3rem;
+}
+
+.profile-info{
+    display: flex;
+    justify-content: end;
+    color: rgba(255, 255, 255, 0.824);
+}
+
+.name-email{
+    margin: 1rem;
 }
 
 li {
     list-style: none;
+    align-items:  left;
+}
+
+.icon-layout{
+    margin: 10px;
+    font-size: 25px;
 }
 
 .navigation-menu {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
     text-align: left;
-    margin-left: 5%;
-    border: 1px solid white;
+}
+
+.fixed-navbar{
+    margin-top: 6rem;
+        overflow: hidden;
+        position: fixed; 
+        top: 0;      
 }
 
 .card-trend {
+<<<<<<< HEAD
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
+=======
+    border: .3px solid white;
+>>>>>>> a366fcce450842aac48ce2ac437f937e58c4d5fe
     height: 500px;
     background-color: rgb(21, 32, 43);
     border-radius: 17px;
@@ -52,11 +99,15 @@ li {
     border-radius: 20px;
 }
 
-.twitter-section {
-    border: 1px solid white;
-    height: 700px;
+.footer{
+    width: 100%;
+    margin-top: 6rem;
+        overflow: hidden;
+        position: fixed; 
+        bottom: 0;  
 }
 
+<<<<<<< HEAD
 .trendHeader {
     display: flex;
     justify-content: space-between;
@@ -118,3 +169,56 @@ li {
     border-radius: 25px;
     background-color: rgb(47, 64, 82);
 }
+=======
+
+/* Search Bar */
+
+.search-bar-container{
+  margin-top:15px;
+  margin-bottom: 15px;
+}
+
+.searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+    }
+
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 450px;
+    caret-color: rgb(47, 64, 82);
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon{
+    background: white;
+    color:rgb(47, 64, 82);
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+    }
+>>>>>>> a366fcce450842aac48ce2ac437f937e58c4d5fe
