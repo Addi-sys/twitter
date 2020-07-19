@@ -31,32 +31,21 @@
 
             </div>
 
+
             <div class="trendSection col-3">
                 <div class="trendHeader">
                     <h5>Vietnam trends</h5>
                     <i class="i fa fa-cog cogImage"></i>
                 </div>
                 <div class="card-trend">
-                    <ol class="border-trend">
-                        <li class="trendCard">
-                            <p>1. Trending</p>
-                            <h6>#WorldNews</h6>
-                            <p id="tweetCount1">1k Tweets</p>
+                    <ol class="border-trend" v-for="item in items" v-bind:key="item">
+                        <li id="trendCard0">
                         </li>
-                        <li class="trendCard">
-                            <p>2. Trending</p>
-                            <h6>#BLACKPINK</h6>
-                            <p id="tweetCount2">1k Tweets</p>
+                        <li id="trendCard1">
                         </li>
-                        <li class="trendCard">
-                            <p>3. Trending</p>
-                            <h6>#BlackOutTuesday</h6>
-                            <p id="tweetCount3">1k Tweets</p>
+                        <li id="trendCard2">
                         </li>
-                        <li class="trendCard">
-                            <p>4, Trending</p>
-                            <h6>Some Cambodian Dribble?</h6>
-                            <p id="tweetCount4">1K Tweets</p>
+                        <li id="trendCard3">
                         </li>
                         <li class="trendCard">
                             <a href="#">Change location</a>
@@ -65,7 +54,9 @@
                 </div>
             </div>
         </div>
-        <script src="js/main.js"></script>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
