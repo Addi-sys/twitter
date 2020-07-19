@@ -108,12 +108,16 @@ const render = (array) => {
                 let html = "";
                 html += `
         <div>
-            <div class="card" style="width: auto;">
-                <div class="card-body">
+            <div class="card" style="width: auto; margin:10px; border-radius: 20px;">
+                <div class="card-body card-styles">
                     <div>
-                        <h5 class="card-title">${item.contents}</h5><span>${moment(item.createTime).fromNow()}
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">sample text</p>
+                    <div class="image-timecounter">
+                    <img src="img/profile.jpeg" alt="profile image" height="55px" width="50px"
+                                style="border-radius: 50%; margin-right: 10px;"><span>${moment(item.createTime).fromNow()}</span>
+                                </div>
+                        <div class="content-tweet">
+                                <h5 class="card-title">${item.contents}</h5>
+                        </div>
                      </div>
                      <div class="card-functions row">
                      <a href="#" class="card-link" onclick="popupFunction(${item.childId})">Retweet-Sign</a>
@@ -124,13 +128,16 @@ const render = (array) => {
                      <div id="commentedTweet${item.childId}"></div>   
                 </div>
             </div>
-            <div id="myModal${item.childId}" class="modal">
+            <div id="myModal${item.childId}" class="modal card-styles">
                 <div class="modal-content">
+                <img src="img/profile.jpeg" alt="profile image" height="55px" width="50px"
+                                style="border-radius: 50%;">
                 <span class="close" id="close${item.childId}">&times;</span>
                 <!-- add children info-->
                     <div>
-                        <input type="text" id="childContent${item.childId}">
+                        <input class="input-retweet" placeholder="Add comment..."type="text" id="childContent${item.childId}">
                         <div class="parentTweet">
+                        
                             <h5 class="card-title">${item.contents}</h5><span>${moment(item.createTime).fromNow()}
                             <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                             <p class="card-text">sample text</p>
@@ -166,17 +173,21 @@ const renderRetweet = (childId, parentId) => {
     let html1 = ''
     if (parent.length != 0) {
         html1 += `<div>
-                <div class="card" style="width: 24rem;">
-                    <div class="card-body">
+                <div class="card" style="width: auto; margin:10px; border-radius: 20px;">
+                    <div class="card-body card-styles">
                         <div>
+                        <div class="image-timecounter">
+                        <img src="img/profile.jpeg" alt="profile image" height="55px" width="50px"
+                                style="border-radius: 50%;">
                             <h5 class="card-title">${child[0].contents}</h5><span>${moment(child[0].createTime).fromNow()}
-                            <div style="border: 1px solid red; border-radius: 25px;">
-                                <h5 class="card-title">${parent[0].contents}</h5><span>${moment(parent[0].createTime).fromNow()}
-                                <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                <p class="card-text">sample text</p>
+                            </div>
+                            <div class="image-timecounter">
+                                <img src="img/profile.jpeg" alt="profile image" height="55px" width="50px"
+                            style="border-radius: 50%;"><span>${moment(parent[0].createTime).fromNow()}
+                                <h5 class="card-title">${parent[0].contents}</h5>
                             </div>
                         </div>
-                        <div>
+                        <div class="card-body card-styles" style="width: auto; margin:10px; border-radius: 20px;">
                             <a onclick="removeTweet(${child[0].childId})" href="#" class="card-link">Delete</a>
                             <a href="#" class="card-link" id="likedTweet${child[0].childId}" onclick="toggleLike(${child[0].childId})">Like</a>
                             <a href="#" class="card-link" onclick="toggleComment(${child[0].childId})">Comment</a>
@@ -185,12 +196,14 @@ const renderRetweet = (childId, parentId) => {
                         <div id="commentedTweet${child[0].childId}"></div>
                     </div>
                 </div>
-                <div id="myModal${child[0].childId}" class="modal">
-                    <div class="modal-content">
+                <div id="myModal${child[0].childId}" class="modal card-styles">
+                <img src="img/profile.jpeg" alt="profile image" height="55px" width="50px"
+                                style="border-radius: 50%;">    
+                <div class="modal-content">
                     <span class="close" id="close${child[0].childId}">&times;</span>
                     <!-- add children info-->
                         <div id="retweetBox${child[0].childId}">
-                            <input id="childContent${child[0].childId}" type="text">
+                            <input class="input-retweet" placeholder="Add comment..." id="childContent${child[0].childId}" type="text">
                             <div class="parentTweet">
                                 <h5 class="card-title">${parent[0].contents}</h5><span>${moment(parent[0].createTime).fromNow()}
                                 <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
@@ -205,9 +218,11 @@ const renderRetweet = (childId, parentId) => {
         return html1
     } else {
         html1 += `<div>
-                <div class="card" style="width: 24rem;">
-                    <div class="card-body">
+                <div class="card" style="width: auto; margin:10px; border-radius: 20px;">
+                    <div class="card-body card-styles">
                         <div>
+                        <img src="img/profile.jpeg" alt="profile image" height="55px" width="50px"
+                                style="border-radius: 50%;">
                             <h5 class="card-title">${child[0].contents}</h5><span>${moment(child[0].createTime).fromNow()}
                             <div style="border: 1px solid red; border-radius: 25px;">
                                 This original tweet has been removed by the owner.

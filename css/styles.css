@@ -7,7 +7,7 @@ body {
     height: 100%;
     background-repeat: repeat;
     background-size: cover;
-    color: thistle;
+    color:  rgba(255, 255, 255, 0.7);
     width: 80%;
     margin: auto;
 }
@@ -71,7 +71,7 @@ li {
     text-decoration: none;
     background-size: 30px;
     background-color: #ffffff;
-    color: #eea200;
+    color: rgb(47, 64, 82);
     padding: 20px;
 }
 
@@ -89,6 +89,10 @@ li {
     top: 0;
 }
 
+.card-styles{
+    background-color: rgb(47, 64, 82);
+    border-radius: 20px;
+}
 .card-trend {
     display: flex;
     justify-content: flex-start;
@@ -331,13 +335,19 @@ li {
 }
 
 /* Modal Content */
-
+.input-retweet{
+    width: 80%;
+    border: none;
+    color:  rgb(21, 32, 43);
+}
 .modal-content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 40%;
+    color:  rgb(21, 32, 43);
+}
 }
 
 /* The Close Button */
@@ -359,10 +369,24 @@ li {
 /* End of popup retweet */
 
 .parentTweet {
-    border: 1px solid red;
+    border: none;
+    background-color: rgba(193, 193, 193, 0.351);
     border-radius: 25px;
-}
+    padding: 10px;
 
+}
+.image-timecounter{
+    text-align: start;
+    padding-left: 30px;
+    margin: 20px;
+}
+.content-tweet{
+    margin-top: 15px;
+    background-color: rgba(193, 193, 193, 0.351);
+    border-radius: 20px;
+    text-align: start;
+    padding-left: 20px;
+}
 .card-functions {
     display: flex;
     justify-content: space-between;
