@@ -67,6 +67,20 @@ li {
     border-radius: 20px;
 }
 
+.icons-tweet{
+    font-size: 20px;
+    display: flex;
+    align-items: flex-end;;
+}
+
+.icons-for-tweetbox{
+    margin: 2rem;
+}
+
+.indicator-for-tweetbox{
+display: flex;
+justify-content: end;
+}
 .icon-layout:hover {
     text-decoration: none;
     background-size: 30px;
@@ -271,13 +285,14 @@ li {
 }
 .tweetinput {
     width: 100%;
-    background-color: red;
+    background-color:rgb(118, 140, 187);
     border: none;
 }
 
 .lower-row{
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly
 }
 .tweetcard {
     display: flex;
@@ -348,7 +363,7 @@ li {
     width: 40%;
     color:  rgb(21, 32, 43);
 }
-}
+
 
 /* The Close Button */
 
