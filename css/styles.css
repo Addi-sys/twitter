@@ -21,6 +21,7 @@ body {
 .twitter-section {
     border: .3px solid white;
     height: 100%;
+    
 }
 
 .followers-layout {
@@ -346,4 +347,9 @@ li {
 .parentTweet {
     border: 1px solid red;
     border-radius: 25px;
+}
+
+
+.tweet-box-align {
+    width: auto;
 }

@@ -24,31 +24,32 @@ setInterval(function() {
 
 
 
+// Autocomplete function
 
-function myAmazingFunction(data) {
-    document.getElementById('output').innerHTML = data;
-}
+// function myAmazingFunction(data) {
+//     document.getElementById('output').innerHTML = data;
+// }
 
-/* this variable will hold the script tag with your desired data */
-var myScript = '';
+// /* this variable will hold the script tag with your desired data */
+// var myScript = '';
 
-/* this section handles what happens after a key is pressed inside your input text box */
-document.getElementById('searchbox').onkeyup = function() {
-    if (myScript !== '') {
-        document.body.removeChild(myScript);
-    }
-    /* this variable stores whatever is in the input text box */
-    var stuff_in_text_box = document.getElementById('searchbox').value;
+// /* this section handles what happens after a key is pressed inside your input text box */
+// document.getElementById('searchbox').onkeyup = function() {
+//     if (myScript !== '') {
+//         document.body.removeChild(myScript);
+//     }
+//     /* this variable stores whatever is in the input text box */
+//     var stuff_in_text_box = document.getElementById('searchbox').value;
 
-    /* this is the script that will hold the data we're trying to get */
-    myScript = document.createElement('script');
+//     /* this is the script that will hold the data we're trying to get */
+//     myScript = document.createElement('script');
 
-    /* this sets the src of the script equal to the url of the data */
-    myScript.src = 'http://en.wikipedia.org/w/api.php?action=opensearch&limit=10&format=json&callback=myAmazingFunction&search=' + stuff_in_text_box;
+//     /* this sets the src of the script equal to the url of the data */
+//     myScript.src = 'http://en.wikipedia.org/w/api.php?action=opensearch&limit=10&format=json&callback=myAmazingFunction&search=' + stuff_in_text_box;
 
-    /* this attaches the script to the body of the page */
-    document.body.appendChild(myScript);
-};
+//     /* this attaches the script to the body of the page */
+//     document.body.appendChild(myScript);
+// };
 let tweetCards = []
 let tweetId = 0
 
@@ -116,7 +117,7 @@ const render = (array) => {
                      </div>
                      <div>
                         <a onclick="removeTweet(${item.childId})" href="#" class="card-link">Delete</a>
-                        <a href="#" class="card-link" id="likedTweet${item.childId}" onclick="toggleLike(${item.childId})">Like</a>
+                        <i class="far fa-heart" href="#" class="card-link" id="likedTweet${item.childId}" onclick="toggleLike(${item.childId})"> 7</i>
                         <a href="#" class="card-link" onclick="toggleComment(${item.childId})">Comment</a>
                         <a href="#" class="card-link" onclick="popupFunction(${item.childId})">Retweet-Sign</a>
                      </div>
@@ -234,10 +235,10 @@ const toggleLike = (childId) => {
     childLike[0].isLike = !childLike[0].isLike
     if (childLike[0].isLike == true) {
         return document.getElementById("likedTweet" + childId).innerHTML =
-            `Like+1`
+            ` <i class="fas fa-heart"> 8</i>`
     } else if (childLike[0].isLike == false) {
         return document.getElementById("likedTweet" + childId).innerHTML =
-            `Like`
+            ` 7`
     }
 }
 
