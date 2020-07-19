@@ -1,8 +1,22 @@
 let tweetCards = []
 let tweetId = 0
+
 let MAX_CHAR = 140
 
 let tweetContents = document.getElementById("tweetArea")
+
+const countLetter = () => {
+    let numOfText = tweetContents.value.length
+    let remain = MAX_CHAR - numOfText
+    if (remain < 0) {
+        document.getElementById("remainNumber").style.color = 'red'
+    } else {
+        document.getElementById("remainNumber").style.color = 'white'
+    }
+    $('#indicatorContainer').data('radialIndicator').animate(100 - remain * 100 / 140)
+
+    document.getElementById("remainNumber").innerHTML = remain
+}
 
 const tweetButton = () => {
     doReverse()
@@ -16,6 +30,8 @@ const tweetButton = () => {
     document.getElementById('tweetArea').value = ``
     document.getElementById("remainNumber").innerHTML = `140`
     render(tweetCards)
+    remain=140;
+    countLetter();
 }
 
 const retweetButton = (id) =>{
@@ -79,6 +95,7 @@ const render = (array) => {
         }}
         ).join("")
     document.getElementById("feedArea").innerHTML = tweetHTML
+
 }
 
 
@@ -241,16 +258,11 @@ const popupFunction = (childId) => {
     }
 }
 
-const countLetter = () => {
-    let numOfText = tweetContents.value.length
-    let remain = MAX_CHAR - numOfText
-    if(remain<0){
-        document.getElementById("remainNumber").style.color = 'red'
-    }else{
-        document.getElementById("remainNumber").style.color = 'black'
-    }
 
-    document.getElementById("remainNumber").innerHTML = remain
-}
+tweetContents.addEventListener("input", countLetter)
 
-tweetContents.addEventListener("input",countLetter)
+$('#indicatorContainer').radialIndicator({
+    barColor: '#87CEEB',
+    percentage: true,
+    displayNumber: false
+});
