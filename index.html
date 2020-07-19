@@ -20,15 +20,7 @@
 
 <body>
     <!-- Search bar -->
-    <div class="container search-bar-container h-50">
-        <div class="d-flex justify-content-center h-100">
-            <div class="searchbar">
-                <input id="searchbox" class="searchbox search_input" type="text" name="" placeholder="Search...">
-                <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
-                <!-- <li id="output"></li> -->
-            </div>
-        </div>
-    </div>
+
     <!-- Main section -->
     <main>
         <div class="row  align-items-start main-section-layout">
@@ -67,19 +59,48 @@
 
             <div class="twitter-section col-6">
                 <div class="tweetbox">
-                    <textarea class="tweetinput" id="tweetArea"></textarea>
-                    <div id="indicatorContainerWrap size" class="dien-another"></div>
-                    <div class="rad-prg" id="indicatorContainer"></div>
-                    <div style="color: white;" id="remainNumber">140</div>
-                    <button onclick="tweetButton()" id="tweetButton">Tweet</button>
+                    <div class="home-bar-top">
+                        <div>Home</div><i class="fas fa-meteor"></i>
+                    </div>
+                    <div class="input-styling row">
+                        <div class="col-md-2 ">
+                            <img src="img/profile.jpeg" alt="profile image" height="50px" width="50px"
+                                style="border-radius: 50%;">
+                        </div>
+                        <div class="tweet-input-box col-md-10 ">
+                            <textarea class="tweetinput" id="tweetArea"></textarea>
+                            <div class="lower-row">
+                                <div class="icons-tweet">
+                                    <div class="icons-for-tweetbox">//</div>
+                                    <div class="indicator-for-tweetbox">
+                                        <div id="indicatorContainerWrap size" class="dien-another"></div>
+                                        <div class="rad-prg" id="indicatorContainer"></div>
+                                        <div style="color: white;" id="remainNumber">140</div>
+                                    </div>
+                                </div>
+                                <button onclick="tweetButton()" id="tweetButton">Tweet</button>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
                 <div class="tweet-box-align" id="feedArea"></div>
             </div>
 
-            
+
 
 
             <div class="trendSection col-3 navigation-menu">
+                <div class="container search-bar-container h-50">
+                    <div class="d-flex justify-content-center h-100">
+                        <div class="searchbar">
+                            <input id="searchbox" class="searchbox search_input" type="text" name=""
+                                placeholder="Search...">
+                            <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                            <!-- <li id="output"></li> -->
+                        </div>
+                    </div>
+                </div>
                 <div class="trendHeader">
                     <h5>Vietnam trends</h5>
                     <i class="i fa fa-cog cogImage"></i>
@@ -116,14 +137,11 @@
 
     </main>
 
-    <footer class="bg-dark footer text-white mt-4">
-        <div class="container-fluid py-3">
-            <div class="row">
-                <div class="col-md-2 "></div>
-                <div class="col-md-8 align-items-center">Made with Love ©2020 </div>
-                <div class="col-md-2 "></div>
-            </div>
-        </div>
+    <footer class="footer">
+        
+           
+                <div class="footer-contents">Made with Love ©2020 </div>
+               
     </footer>
 
 

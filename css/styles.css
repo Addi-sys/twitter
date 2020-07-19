@@ -8,8 +8,9 @@ body {
     background-repeat: repeat;
     background-size: cover;
     color: thistle;
+    width: 80%;
+    margin: auto;
 }
-
 
 /* NavBar Section */
 
@@ -19,9 +20,7 @@ body {
 }
 
 .twitter-section {
-    border: .3px solid white;
     height: 100%;
-    
 }
 
 .followers-layout {
@@ -72,7 +71,7 @@ li {
     text-decoration: none;
     background-size: 30px;
     background-color: #ffffff;
-    color: #EEA200;
+    color: #eea200;
     padding: 20px;
 }
 
@@ -94,14 +93,13 @@ li {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    border: .3px solid white;
+    border: 0.3px solid white;
     height: 500px;
     background-color: rgb(21, 32, 43);
     border-radius: 17px;
     padding-left: 0%;
     padding-right: 0%;
 }
-
 
 /* .trendSection {
     margin-top: 6rem;
@@ -116,7 +114,6 @@ li {
 
 .footer {
     width: 100%;
-    margin-top: 6rem;
     overflow: hidden;
     position: fixed;
     bottom: 0;
@@ -129,14 +126,14 @@ li {
     padding-left: 30px;
     padding-right: 30px;
     margin-bottom: 30px;
-    margin-top: 10px;
+    margin-top: 90px;
     background-color: rgb(21, 32, 43);
     border-radius: 17px;
 }
 
 .trendCard {
     background-color: rgb(21, 32, 43);
-    border-top: .2px solid rgb(112, 128, 144);
+    border-top: 0.2px solid rgb(112, 128, 144);
     text-align: left;
     padding-top: 15px;
     padding-left: 20px;
@@ -153,21 +150,21 @@ li {
     background-color: rgb(47, 64, 82);
 }
 
-.card-trend>ol {
+.card-trend > ol {
     padding-left: 0%;
 }
 
-.trendCard>p {
+.trendCard > p {
     font-size: 12px;
     color: rgb(91, 109, 128);
     margin-bottom: 8px;
 }
 
-.trendHeader>h5 {
+.trendHeader > h5 {
     color: white;
 }
 
-.trendCard>h6 {
+.trendCard > h6 {
     color: white;
 }
 
@@ -184,29 +181,26 @@ li {
     background-color: rgb(47, 64, 82);
 }
 
-
 /* Search Bar */
-
-.search-bar-container {
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
 
 #output {
     background-color: white;
     border-radius: 20px;
     border: 2px solid grey;
-    width: 400px;
+    width: 200px;
     height: auto;
 }
 
 .searchbar {
-    margin-bottom: auto;
-    margin-top: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
     height: 60px;
     background-color: #353b48;
     border-radius: 30px;
     padding: 10px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
 }
 
 .search_input {
@@ -220,14 +214,14 @@ li {
     transition: width 0.4s linear;
 }
 
-.searchbar:hover>.search_input {
+.searchbar:hover > .search_input {
     padding: 0 10px;
-    width: 450px;
+    width: 300px;
     caret-color: rgb(47, 64, 82);
     transition: width 0.4s linear;
 }
 
-.searchbar:hover>.search_icon {
+.searchbar:hover > .search_icon {
     background: white;
     color: rgb(47, 64, 82);
 }
@@ -245,27 +239,52 @@ li {
 }
 
 .twitter-section {
-    border: 1px solid white;
+    border: 2px solid rgb(118, 140, 187);
     height: 100%;
     padding-bottom: 40px;
-    min-height: 700px;
+    min-height: 900px;
+    width: auto;
+    padding: 0;
+}
+.tweet-input-box{
+    padding: 0;
+    margin: 0;
 }
 
+.input-styling {
+    display: flex;
+    width: 95%;
+    margin: auto;
+}
+.home-bar-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    padding: 10px;
+    color: black;
+    border: 2px solid rgb(118, 140, 187);
+    border-top: none;
+}
 .tweetinput {
-    width: 400px;
+    width: 100%;
+    background-color: red;
+    border: none;
 }
 
+.lower-row{
+    display: flex;
+    flex-direction: row;
+}
 .tweetcard {
     display: flex;
     justify-content: center;
 }
 
 .tweetbox {
-    border: 1px solid black;
     border-radius: 5px;
     width: auto;
     height: 180px;
-    background-color: rgb(21, 32, 43);
+    background-color: lightgray;
 }
 
 .tweettime {
@@ -284,9 +303,7 @@ li {
     float: left;
 }
 
-
 /* For the popup retweet */
-
 
 /* The Modal (background) */
 
@@ -313,7 +330,6 @@ li {
     /* Black w/ opacity */
 }
 
-
 /* Modal Content */
 
 .modal-content {
@@ -323,7 +339,6 @@ li {
     border: 1px solid #888;
     width: 80%;
 }
-
 
 /* The Close Button */
 
@@ -341,7 +356,6 @@ li {
     cursor: pointer;
 }
 
-
 /* End of popup retweet */
 
 .parentTweet {
@@ -349,7 +363,9 @@ li {
     border-radius: 25px;
 }
 
-
-.tweet-box-align {
-    width: auto;
+.card-functions {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5rem;
+    margin-right: 5rem;
 }

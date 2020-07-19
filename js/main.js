@@ -108,18 +108,18 @@ const render = (array) => {
                 let html = "";
                 html += `
         <div>
-            <div class="card" style="width: 24rem;">
+            <div class="card" style="width: auto;">
                 <div class="card-body">
                     <div>
                         <h5 class="card-title">${item.contents}</h5><span>${moment(item.createTime).fromNow()}
                         <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                         <p class="card-text">sample text</p>
                      </div>
-                     <div>
+                     <div class="card-functions row">
+                     <a href="#" class="card-link" onclick="popupFunction(${item.childId})">Retweet-Sign</a>
+                        <div id="likedTweet${item.childId}" onclick="toggleLike(${item.childId})"><i class="far fa-heart" href="#" class="card-link" > 7</i></div>
+                        <div class="card-link" onclick="toggleComment(${item.childId})"><i class="far fa-comment"></i></div>
                         <a onclick="removeTweet(${item.childId})" href="#" class="card-link">Delete</a>
-                        <i class="far fa-heart" href="#" class="card-link" id="likedTweet${item.childId}" onclick="toggleLike(${item.childId})"> 7</i>
-                        <a href="#" class="card-link" onclick="toggleComment(${item.childId})">Comment</a>
-                        <a href="#" class="card-link" onclick="popupFunction(${item.childId})">Retweet-Sign</a>
                      </div>
                      <div id="commentedTweet${item.childId}"></div>   
                 </div>
@@ -238,7 +238,7 @@ const toggleLike = (childId) => {
             ` <i class="fas fa-heart"> 8</i>`
     } else if (childLike[0].isLike == false) {
         return document.getElementById("likedTweet" + childId).innerHTML =
-            ` 7`
+            ` <i class="far fa-heart"> 7</i>`
     }
 }
 
