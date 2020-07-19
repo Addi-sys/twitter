@@ -74,7 +74,7 @@ li {
 }
 
 .icons-for-tweetbox{
-    margin-right:370px;
+    margin-right:300px;
 }
 
 .icon-style{
@@ -265,7 +265,7 @@ justify-content: end;
 }
 
 .twitter-section {
-    border: 2px solid rgb(118, 140, 187);
+    border: .5px solid rgb(118, 140, 187);
     height: 100%;
     padding-bottom: 40px;
     min-height: 1020px;
@@ -289,7 +289,7 @@ justify-content: end;
     font-weight: 300;
     padding: 10px;
     color: rgba(255, 255, 255, 0.899);
-    border: 2px solid rgb(118, 140, 187);
+    border: 1px solid rgb(118, 140, 187);
     border-top: none;
     border-left: none;
     border-right: none;
