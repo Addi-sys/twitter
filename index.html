@@ -19,8 +19,9 @@
     <div class="container search-bar-container h-50">
         <div class="d-flex justify-content-center h-100">
             <div class="searchbar">
-                <input class="search_input" type="text" name="" placeholder="Search...">
+                <input id="searchbox" class="searchbox search_input" type="text" name="" placeholder="Search...">
                 <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                <li id="output"></li>
             </div>
         </div>
     </div>
@@ -156,6 +157,8 @@
         </div>
     </footer>
 
+
+    <script src="http://en.wikipedia.org/w/api.php?action=opensearch&limit=10&format=json&callback=myAmazingFunction&search=a"></script>
     <script src="js/main.js"></script>
 </body>
 
