@@ -2,21 +2,9 @@
 
 Created with love by: Marc, Juan Carlos, Dai, and MQ
   
-We tried 
+We tried our best to recreate the Twitter feed page
 
-## Video Walkthrough
-
-Here's a walkthrough of implemented user stories.
-
-To create a GIF, use [LiceCap](http://www.cockos.com/licecap/), [RecordIt](http://www.recordit.co), or [Loom](http://www.useloom.com), and link the image here in the markdown.
-
-```
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-```
-
-## User Stories
-
-The following **required** functionalities are completed (this is a sample):
+The following **required** functionalities are completed:
 
 * [x] Top navigation bar with dropdown buttons
 * [x] Banner with background image, white text, and a green button

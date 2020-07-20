@@ -391,9 +391,11 @@ li {
 /* Modal Content */
 
 .input-retweet {
-    width: 80%;
+    min-width: 500px;
+    width: 100%;
     border: none;
     color: rgb(21, 32, 43);
+    outline: none;
 }
 
 .modal-content {
@@ -403,6 +405,7 @@ li {
     border: 1px solid #888;
     width: 40%;
     color: rgb(21, 32, 43);
+    padding-top: 0;
 }
 
 
@@ -413,6 +416,8 @@ li {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    border-bottom: 1px solid gray;
+    margin-bottom: 5px;
 }
 
 .close:hover,
@@ -434,8 +439,7 @@ li {
 
 .image-timecounter {
     text-align: start;
-    padding-left: 30px;
-    margin: 20px;
+    margin: 0px 10px 10px 10px;
 }
 
 .content-tweet {
@@ -451,4 +455,25 @@ li {
     justify-content: space-between;
     margin-left: 5rem;
     margin-right: 5rem;
+}
+
+.content-retweet {
+    margin-top: 15px;
+    background-color: rgba(193, 193, 193, 0.351);
+    border-radius: 20px;
+    text-align: start;
+    padding: 5px 20px 2px 20px;
+    margin-left: 15%;
+    margin-bottom: 0.75rem;
+}
+
+.retweet-child-content {
+    margin-left: 15%;
+    margin-bottom: 0;
+}
+
+.popupChildContents {
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
