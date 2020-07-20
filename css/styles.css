@@ -271,7 +271,7 @@ li {
 }
 
 .twitter-section {
-    border: .5px solid rgb(118, 140, 187);
+    background-color: rgba(211, 211, 211, 0.063);
     height: 100%;
     padding-bottom: 40px;
     min-height: 1020px;
@@ -293,6 +293,7 @@ li {
     display: flex;
     width: 95%;
     margin-top: 1rem;
+ 
 }
 
 .home-bar-top {
@@ -342,6 +343,7 @@ li {
     height: auto;
     margin-bottom: 2rem;
     background-color: rgba(211, 211, 211, 0.063);
+    border: 1px solid rgb(118, 140, 187);
 }
 
 #remainNumber {
