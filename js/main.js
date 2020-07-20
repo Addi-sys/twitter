@@ -1,7 +1,7 @@
 let tweetCount = [{ header: 'Trending', hash: '#WorldNews', retweets: 2 },
-    { header: 'Trending', hash: '#BLACKPINK', retweets: 3 },
-    { header: 'Trending', hash: '#BlackOutTuesday', retweets: 1 },
-    { header: 'Trending', hash: '#BunBoHue', retweets: 0 }
+{ header: 'Trending', hash: '#BLACKPINK', retweets: 3 },
+{ header: 'Trending', hash: '#BlackOutTuesday', retweets: 1 },
+{ header: 'Trending', hash: '#BunBoHue', retweets: 0 }
 ]
 
 
@@ -18,7 +18,7 @@ function randomNumTweets() {
     }
 }
 
-setInterval(function() {
+setInterval(function () {
     randomNumTweets();
 }, 3000);
 
@@ -73,10 +73,14 @@ const countLetter = () => {
 const tweetButton = () => {
     doReverse()
     tweetId++
-    console.log(tweetId)
+    console.log("childId:",tweetId)
     let tweet = document.getElementById("tweetArea").value
     console.log("content", tweet)
-    let itemTweet = { contents: tweet, isLike: false, isRetweet: false, childId: tweetId, isComment: false, commentContents: '', parentId: null, createTime: Date.now() }
+    if (tweet == '') {
+        alert("Please enter your tweet contents!");
+        return
+    }
+    let itemTweet = { name: 'Marc Coxon', logo: 'img/profile.jpeg', contents: tweet, isLike: false, isRetweet: false, childId: tweetId, isComment: false, commentContents: '', parentId: null, createTime: Date.now() }
     tweetCards.push(itemTweet)
     doReverse()
     document.getElementById('tweetArea').value = ``
@@ -87,13 +91,12 @@ const tweetButton = () => {
 }
 
 const retweetButton = (id) => {
-
     doReverse()
     tweetId++
     console.log(tweetId)
     let retweet = document.getElementById("childContent" + id).value
     console.log("content", retweet)
-    let itemReTweet = { contents: retweet, isLike: false, isRetweet: true, childId: tweetId, isComment: false, commentContents: '', parentId: id, createTime: Date.now() }
+    let itemReTweet = { name: 'Marc Coxon', logo: 'img/profile.jpeg', contents: retweet, isLike: false, isRetweet: true, childId: tweetId, isComment: false, commentContents: '', parentId: id, createTime: Date.now() }
     tweetCards.push(itemReTweet)
     console.log("here", tweetCards)
     doReverse()
@@ -112,37 +115,47 @@ const render = (array) => {
                 <div class="card-body card-styles">
                     <div>
                     <div class="image-timecounter">
-                    <img src="img/profile.jpeg" alt="profile image" height="55px" width="50px"
-                                style="border-radius: 50%; margin-right: 10px;"><span>${moment(item.createTime).fromNow()}</span>
-                                </div>
+                    
+                    <img src="${item.logo}" alt="profile image" height="55px" width="50px"
+                                style="border-radius: 50%; margin-right: 10px;">
+                    <span>${item.name}</span>
+                    <i class="far fa-badge-check"></i> 
+                    <span>${moment(item.createTime).fromNow()}</span>
+                    </div>
+                        
                         <div class="content-tweet">
-                                <h5 class="card-title">${item.contents}</h5>
+                                <p class="card-title">${item.contents}</p>
                         </div>
                      </div>
                      <div class="card-functions row">
-                     <a href="#" class="card-link" onclick="popupFunction(${item.childId})">Retweet-Sign</a>
+                     <div class="card-link" onclick="popupFunction(${item.childId})"><i class="fal fa-retweet"></i></div>
                         <div id="likedTweet${item.childId}" onclick="toggleLike(${item.childId})"><i class="far fa-heart" href="#" class="card-link" > 7</i></div>
                         <div class="card-link" onclick="toggleComment(${item.childId})"><i class="far fa-comment"></i></div>
-                        <a onclick="removeTweet(${item.childId})" href="#" class="card-link">Delete</a>
+                        <div onclick="removeTweet(${item.childId})" style="cursor: pointer;"><i class="fal fa-trash-alt"></i></div>
                      </div>
                      <div id="commentedTweet${item.childId}"></div>   
                 </div>
             </div>
             <div id="myModal${item.childId}" class="modal card-styles">
                 <div class="modal-content">
-                <img src="img/profile.jpeg" alt="profile image" height="55px" width="50px"
-                                style="border-radius: 50%;">
-                <span class="close" id="close${item.childId}">&times;</span>
-                <!-- add children info-->
-                    <div>
-                        <input class="input-retweet" placeholder="Add comment..."type="text" id="childContent${item.childId}">
-                        <div class="parentTweet">
-                        
-                            <h5 class="card-title">${item.contents}</h5><span>${moment(item.createTime).fromNow()}
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">sample text</p>
-                        </div>  
+                    <div class="close" id="close${item.childId}">&times;</div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="${item.logo}" alt="profile image" height="55px" width="50px" style="border-radius: 50%;">
+                        </div>
+                        <div class="col=sm-10 popupChildContents">            
+                            <input class="input-retweet" placeholder="Add comment..."type="text" id="childContent${item.childId}">
+                        </div>
                     </div>
+                    <div class="content-retweet">
+                        <img src="${item.logo}" alt="profile image" height="55px" width="50px"
+                        style="border-radius: 50%;">
+                        <span>${item.name}</span> <i class="far fa-badge-check"></i>
+                        <span>${moment(item.createTime).fromNow()}
+                        <p class="retweet-child-content">${item.contents}</p>
+                    </div>
+                
+                    
                 <a href="#" class="card-link" onclick="retweetButton(${item.childId})">Retweet</a>
                 </div>
             </div>    
@@ -177,62 +190,70 @@ const renderRetweet = (childId, parentId) => {
                     <div class="card-body card-styles">
                         <div>
                         <div class="image-timecounter">
-                        <img src="img/profile.jpeg" alt="profile image" height="55px" width="50px"
-                                style="border-radius: 50%;">
-                            <h5 class="card-title">${child[0].contents}</h5><span>${moment(child[0].createTime).fromNow()}
+                            <img src="${child[0].logo}" alt="profile image" height="55px" width="50px"
+                            style="border-radius: 50%;margin-right: 10px;"> <span>${child[0].name}</span> <i class="far fa-badge-check"></i> <span>${moment(child[0].createTime).fromNow()}</span>
+                            <p class="retweet-child-content">${child[0].contents}</p>
                             </div>
-                            <div class="image-timecounter">
-                                <img src="img/profile.jpeg" alt="profile image" height="55px" width="50px"
-                            style="border-radius: 50%;"><span>${moment(parent[0].createTime).fromNow()}
-                                <h5 class="card-title">${parent[0].contents}</h5>
+                            <div class="content-retweet">
+                                <img src="${parent[0].logo}" alt="profile image" height="55px" width="50px"
+                            style="border-radius: 50%;">
+                            <span>${parent[0].name}</span> <i class="far fa-badge-check"></i>
+                            <span>${moment(parent[0].createTime).fromNow()}
+                                <p class="retweet-child-content">${parent[0].contents}</p>
                             </div>
                         </div>
-                        <div class="card-body card-styles" style="width: auto; margin:10px; border-radius: 20px;">
-                            <a onclick="removeTweet(${child[0].childId})" href="#" class="card-link">Delete</a>
-                            <a href="#" class="card-link" id="likedTweet${child[0].childId}" onclick="toggleLike(${child[0].childId})">Like</a>
-                            <a href="#" class="card-link" onclick="toggleComment(${child[0].childId})">Comment</a>
-                            <a href="#" class="card-link" onclick="popupFunction(${child[0].childId})">Retweet-Sign</a>
-                        </div>
+                        <div class="card-functions row">
+                            <div class="card-link" onclick="popupFunction(${child[0].childId})"><i class="fal fa-retweet"></i></div>
+                            <div id="likedTweet${child[0].childId}" onclick="toggleLike(${child[0].childId})"><i class="far fa-heart" href="#" class="card-link" > 7</i></div>
+                            <div class="card-link" onclick="toggleComment(${child[0].childId})"><i class="far fa-comment"></i></div>
+                            <div onclick="removeTweet(${child[0].childId})" style="cursor: pointer;"><i class="fal fa-trash-alt"></i></div>
+                     </div>
                         <div id="commentedTweet${child[0].childId}"></div>
                     </div>
                 </div>
                 <div id="myModal${child[0].childId}" class="modal card-styles">
-                <img src="img/profile.jpeg" alt="profile image" height="55px" width="50px"
-                                style="border-radius: 50%;">    
                 <div class="modal-content">
-                    <span class="close" id="close${child[0].childId}">&times;</span>
-                    <!-- add children info-->
-                        <div id="retweetBox${child[0].childId}">
-                            <input class="input-retweet" placeholder="Add comment..." id="childContent${child[0].childId}" type="text">
-                            <div class="parentTweet">
-                                <h5 class="card-title">${parent[0].contents}</h5><span>${moment(parent[0].createTime).fromNow()}
-                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                <p class="card-text">sample text</p>
-                            </div>  
+                    <div class="close" id="close${child[0].childId}">&times;</div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="${child[0].logo}" alt="profile image" height="55px" width="50px" style="border-radius: 50%;">
                         </div>
-                    <a href="#" class="card-link" onclick="retweetButton(${child[0].childId})">Retweet</a>
+                        <div class="col=sm-10 popupChildContents">            
+                            <input class="input-retweet" placeholder="Add comment..."type="text" id="childContent${child[0].childId}">
+                        </div>
                     </div>
+                    <div class="content-retweet">
+                        <img src="${parent[0].logo}" alt="profile image" height="55px" width="50px"
+                        style="border-radius: 50%;">
+                        <span>${parent[0].name}</span> <i class="far fa-badge-check"></i>
+                        <span>${moment(parent[0].createTime).fromNow()}
+                        <p class="retweet-child-content">${parent[0].contents}</p>
+                    </div>    
+                    <a href="#" class="card-link" onclick="retweetButton(${child[0].childId})">Retweet</a>
+                </div>
+            </div>  
                 </div>    
             </div>`
 
         return html1
     } else {
         html1 += `<div>
-                <div class="card" style="width: auto; margin:10px; border-radius: 20px;">
-                    <div class="card-body card-styles">
-                        <div>
-                        <img src="img/profile.jpeg" alt="profile image" height="55px" width="50px"
-                                style="border-radius: 50%;">
-                            <h5 class="card-title">${child[0].contents}</h5><span>${moment(child[0].createTime).fromNow()}
-                            <div style="border: 1px solid red; border-radius: 25px;">
-                                This original tweet has been removed by the owner.
+                    <div class="card" style="width: auto; margin:10px; border-radius: 20px;">
+                        <div class="card-body card-styles">
+                            <div class="image-timecounter">
+                                <img src="${child[0].logo}" alt="profile image" height="55px" width="50px"
+                    style="border-radius: 50%;margin-right: 10px;"> <span>${child[0].name}</span> <i class="far fa-badge-check"></i> <span>${moment(child[0].createTime).fromNow()}</span>
+                                <p class="retweet-child-content">${child[0].contents}</p>
                             </div>
+                        <div class="content-retweet">
+                            <p class="card-title" style="color: black;"><i>This original tweet has been removed by the owner.<i/></p>
                         </div>
-                        <div>
-                            <a onclick="removeTweet(${child[0].childId})" href="#" class="card-link">Delete</a>
-                            <a href="#" class="card-link" id="likedTweet${child[0].childId}" onclick="toggleLike(${child[0].childId})">Like</a>
-                            <a href="#" class="card-link" id="commentedTweet${child[0].childId}" onclick="toggleComment(${child[0].childId})">Comment</a>
-                            <a href="#" class="card-link" onclick="popupFunction(${child[0].childId})">Retweet-Sign</a>
+                        
+                        <div class="card-functions row">
+                            <div class="card-link" onclick="popupFunction(${child[0].childId})"><i class="fal fa-retweet"></i></div>
+                            <div id="likedTweet${child[0].childId}" onclick="toggleLike(${child[0].childId})"><i class="far fa-heart" href="#" class="card-link" > 7</i></div>
+                            <div class="card-link" onclick="toggleComment(${child[0].childId})"><i class="far fa-comment"></i></div>
+                            <div onclick="removeTweet(${child[0].childId})" style="cursor: pointer;"><i class="fal fa-trash-alt"></i></div>
                         </div>
                         <div id="commentedTweet${child[0].childId}"></div>   
                     </div>
@@ -245,8 +266,9 @@ const renderRetweet = (childId, parentId) => {
 
 
 const toggleLike = (childId) => {
-    let childLike = tweetCards.filter((child) => child.childId = childId)
-    console.log("childLike", childLike[0])
+    let childLike = tweetCards.filter((child) => child.childId == childId)
+    console.log("childLike", childLike)
+    console.log("tweetCards:", tweetCards)
     childLike[0].isLike = !childLike[0].isLike
     if (childLike[0].isLike == true) {
         return document.getElementById("likedTweet" + childId).innerHTML =
@@ -258,16 +280,22 @@ const toggleLike = (childId) => {
 }
 
 const toggleComment = (childId) => {
-    let childComment = tweetCards.filter((child) => child.childId = childId)
+    let childComment = tweetCards.filter((child) => child.childId == childId)
     console.log("childLike", childComment[0])
     childComment[0].isComment = !childComment[0].isComment
 
     if (childComment[0].isComment == true) {
         return document.getElementById("commentedTweet" + childId).innerHTML =
-            `<div id="commentBox${childComment[0].childId} style="border: 1px solid gray; border-radius:25px; width: 20rem; height: 100%;">
-            //icon//
-            <textarea id="commentArea${childComment[0].childId}"></textarea>
-            <a href="#" id="comfirmComment${childComment[0].childId}" onclick="comment(${childComment[0].childId})">Enter</a>
+            `<div id="commentBox${childComment[0].childId}" style="border: 1px solid gray; border-radius:20px; width: 100%; height: 100%; margin-top:5px;">
+            <div class="row comment-box-info" style="width: 100%; margin: 5px;">
+                <div class="col-sm-1" style="item-align: center;justify-content: center;padding:0;">
+                    <img src="img/profile.jpeg" alt="profile image" height="45px" width="45px" style="border-radius: 50%;">
+                </div>
+                <div class="col-sm-11" style="item-align: center;justify-content: center;padding:0;">
+                    <input id="commentArea${childComment[0].childId}" placeholder="Add comment ..." style="width:100%;height: 45px; max-width:500px; border: none; outline:none; border-radius: 15px; background-color: transparent; color: rgba(255, 255, 255, 0.7);">
+                </div>
+            </div>
+            
         </div>`
     } else if (childComment[0].isComment == false) {
         return document.getElementById("commentedTweet" + childId).innerHTML =
@@ -276,7 +304,7 @@ const toggleComment = (childId) => {
 }
 
 const comment = (childId) => {
-    let x = tweetCards.filter((child) => child.childId = childId)
+    let x = tweetCards.filter((child) => child.childId == childId)
     console.log("commentBox:", x[0])
     x[0].commentContents = document.getElementById("commentArea" + childId).value
 }
@@ -313,12 +341,12 @@ const popupFunction = (childId) => {
 
 
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
+    span.onclick = function () {
         modal.style.display = "none";
     }
 
     // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
