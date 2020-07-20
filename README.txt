@@ -6,28 +6,30 @@ We tried our best to recreate the Twitter feed page
 
 The following **required** functionalities are completed:
 
-* [x] Top navigation bar with dropdown buttons
-* [x] Banner with background image, white text, and a green button
-* [x] Color or text change when mouse hovers over
-* [x] At least 3 different body sections with different background images or colors
-* [x] 2 (or 3) card items per row in a body section
-* [x] Footer with social icons that link to the actual social pages
+
+    [x] The user should be able to enter a message into a text field.
+    [x] The user should be able to press "Tweet" and see the message pop in below the text box.
+    [x] The user should see a "count" that displays how many more characters the user has remaining, counting down from 140.
+    [x] Upon tweeting, the characters remaining text should reset back to 140, and the field should be cleared.
+    [ ] The application should disallow text of greater than 140 characters.
+    [x] The user should be able to "Retweet". Clicking Retweet immediately inserts a copy of that tweet below the original tweet.
+    [x] The user should be able to "Like". When "Like" is clicked, the text should change to "Unlike". When "Unlike" is clicked, the text should change to "Like". Alternatively, use a heart icon (colored or not colored).
+    [x] When a "Liked" tweet is retweeted, the new tweet should not be liked.
+    [ ] Each tweet has an optional hashtag. The hashtag should be linked with an anchor tag.
+    [x] The user should be able to delete a tweet.
+
 
 The following **optional** features are implemented:
 
-* [x] Add favicon to the page
-* [ ] Animation on an element
-* [ ] Navigation, contact, sitemap, privacy policy, term of use, etc in footer
-* [ ] Bootstrap carousel for banner
-* [ ] Banner with background video
+    [ ] Users can mention other users. Any string that starts with @username will be highlighted in blue.
+    [ ] The user can click on a hashtag, and only other tweets with that hashtag are shown.
+    [ ] When the user deletes a tweet, all retweets should be deleted.
+    [ ] Any tweet with an image URL will have the image automatically expanded in the tweet.
 
-The following **additional** features are implemented:
-
-* [x] List anything else that you can get done to improve the page!
 
 ## Time Spent and Lessons Learned
 
-Time spent: **X** hours spent in total.
+Time spent: 20 hours spent in total.
 
 Describe any challenges encountered while building the app.
 
