@@ -7,10 +7,11 @@ body {
     height: 100%;
     background-repeat: repeat;
     background-size: cover;
-    color:  rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7);
     width: 80%;
     margin: auto;
 }
+
 
 /* NavBar Section */
 
@@ -67,27 +68,28 @@ li {
     border-radius: 20px;
 }
 
-.icons-tweet{
+.icons-tweet {
     font-size: 20px;
     display: flex;
     align-items: flex-end;
 }
 
-.icons-for-tweetbox{
-    margin-right:300px;
+.icons-for-tweetbox {
+    margin-right: 300px;
 }
 
-.icon-style{
+.icon-style {
     margin: 3px;
 }
-.icon-style:hover{
+
+.icon-style:hover {
     border-radius: 50%;
-    background-color:rgb(47, 64, 82);
-    
+    background-color: rgb(47, 64, 82);
 }
-.indicator-for-tweetbox{
-display: flex;
-justify-content: end;
+
+.indicator-for-tweetbox {
+    display: flex;
+    justify-content: end;
 }
 
 .icon-layout:hover {
@@ -112,10 +114,11 @@ justify-content: end;
     top: 0;
 }
 
-.card-styles{
+.card-styles {
     background-color: rgb(47, 64, 82);
     border-radius: 20px;
 }
+
 .card-trend {
     display: flex;
     justify-content: flex-start;
@@ -127,6 +130,7 @@ justify-content: end;
     padding-left: 0%;
     padding-right: 0%;
 }
+
 
 /* .trendSection {
     margin-top: 6rem;
@@ -176,21 +180,21 @@ justify-content: end;
     background-color: rgb(47, 64, 82);
 }
 
-.card-trend > ol {
+.card-trend>ol {
     padding-left: 0%;
 }
 
-.trendCard > p {
+.trendCard>p {
     font-size: 12px;
     color: rgb(91, 109, 128);
     margin-bottom: 8px;
 }
 
-.trendHeader > h5 {
+.trendHeader>h5 {
     color: white;
 }
 
-.trendCard > h6 {
+.trendCard>h6 {
     color: white;
 }
 
@@ -206,6 +210,7 @@ justify-content: end;
     border-radius: 25px;
     background-color: rgb(47, 64, 82);
 }
+
 
 /* Search Bar */
 
@@ -240,14 +245,14 @@ justify-content: end;
     transition: width 0.4s linear;
 }
 
-.searchbar:hover > .search_input {
+.searchbar:hover>.search_input {
     padding: 0 10px;
     width: auto;
     caret-color: rgb(47, 64, 82);
     transition: width 0.4s linear;
 }
 
-.searchbar:hover > .search_icon {
+.searchbar:hover>.search_icon {
     background: white;
     color: rgb(47, 64, 82);
 }
@@ -272,7 +277,8 @@ justify-content: end;
     width: auto;
     padding: 0;
 }
-.tweet-input-box{
+
+.tweet-input-box {
     padding: 0;
     margin: 0;
 }
@@ -280,8 +286,9 @@ justify-content: end;
 .input-styling {
     display: flex;
     width: 95%;
-    margin-top:1rem;
+    margin-top: 1rem;
 }
+
 .home-bar-top {
     display: flex;
     justify-content: space-between;
@@ -294,21 +301,22 @@ justify-content: end;
     border-left: none;
     border-right: none;
 }
+
 .tweetinput {
     padding-top: 15px;
     width: 100%;
-    background-color:rgba(118, 140, 187, 0.392);
+    background-color: rgba(118, 140, 187, 0.392);
     border: none;
     border-radius: 20px;
     margin-bottom: 5px;
 }
 
-.img-profile-tweet{
+.img-profile-tweet {
     padding: 5px;
     text-align: end;
 }
 
-.lower-row{
+.lower-row {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -321,18 +329,19 @@ justify-content: end;
 
 .tweetbox {
     border-radius: 5px;
-    padding-bottom:1rem ;
+    padding-bottom: 1rem;
     width: auto;
     height: auto;
     margin-bottom: 2rem;
     background-color: rgba(211, 211, 211, 0.063);
 }
 
-#remainNumber{
+#remainNumber {
     margin-right: 1rem;
     margin-left: 5px;
     padding-top: .5rem;
 }
+
 .tweettime {
     color: rgba(128, 128, 128, 0.536);
     float: left;
@@ -349,7 +358,9 @@ justify-content: end;
     float: left;
 }
 
+
 /* For the popup retweet */
+
 
 /* The Modal (background) */
 
@@ -376,19 +387,22 @@ justify-content: end;
     /* Black w/ opacity */
 }
 
+
 /* Modal Content */
-.input-retweet{
+
+.input-retweet {
     width: 80%;
     border: none;
-    color:  rgb(21, 32, 43);
+    color: rgb(21, 32, 43);
 }
+
 .modal-content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 40%;
-    color:  rgb(21, 32, 43);
+    color: rgb(21, 32, 43);
 }
 
 
@@ -408,6 +422,7 @@ justify-content: end;
     cursor: pointer;
 }
 
+
 /* End of popup retweet */
 
 .parentTweet {
@@ -415,20 +430,22 @@ justify-content: end;
     background-color: rgba(193, 193, 193, 0.351);
     border-radius: 25px;
     padding: 10px;
-
 }
-.image-timecounter{
+
+.image-timecounter {
     text-align: start;
     padding-left: 30px;
     margin: 20px;
 }
-.content-tweet{
+
+.content-tweet {
     margin-top: 15px;
     background-color: rgba(193, 193, 193, 0.351);
     border-radius: 20px;
     text-align: start;
     padding-left: 20px;
 }
+
 .card-functions {
     display: flex;
     justify-content: space-between;
