@@ -90,6 +90,7 @@ li {
 .indicator-for-tweetbox {
     display: flex;
     justify-content: end;
+    padding-left: 10px;
 }
 
 .icon-layout:hover {
@@ -277,10 +278,15 @@ li {
     width: auto;
     padding: 0;
 }
-
+.bluetweetbutton{
+    background-color: rgb(29, 161, 242);
+    color: white;
+    font-weight: bold;
+}
 .tweet-input-box {
     padding: 0;
     margin: 0;
+
 }
 
 .input-styling {
@@ -309,6 +315,8 @@ li {
     border: none;
     border-radius: 20px;
     margin-bottom: 5px;
+    color: white;
+    padding: 10px;
 }
 
 .img-profile-tweet {
